@@ -5,7 +5,7 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../data/dummy';
-import { useStateContext } from '../context/ContextProvider';
+import { useStateContext } from '../contexts/ContextProvider';
 
 function Sidebar() {
   const { activeMenu, setActiveMenu } = useStateContext;
@@ -35,7 +35,7 @@ function Sidebar() {
           <TooltipComponent content="Menu" position="BottomCenter">
             <button
               type="button"
-              onClick={(prevActiveMenu) => !setActiveMenu}
+              onClick={(prevActiveMenu) => !prevActiveMenu}
               className="
             text-xl rounded-full p-3 hover:bg-light-gray
             mt-4 block md:hidden
