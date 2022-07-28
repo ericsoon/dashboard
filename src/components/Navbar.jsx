@@ -26,9 +26,8 @@ function NavButton({ title, customFunc, icon, color, dotColor }) {
           className="
       absolute inline-flex rounded-full h2 w-2 right-2 top-2
       "
-        >
-          {icon}
-        </span>
+        />
+        {icon}
       </button>
     </TooltipComponent>
   );
@@ -43,6 +42,15 @@ function Navbar() {
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
+
   return (
     <div className="
       flex justify-between p-2
