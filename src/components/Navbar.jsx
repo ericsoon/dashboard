@@ -16,7 +16,7 @@ function NavButton({ title, customFunc, icon, color, dotColor }) {
     <TooltipComponent content={title} position="ButtomCenter">
       <button
         type="button"
-        oncClick={customFunc}
+        onClick={customFunc}
         style={{ color }}
         className="
         relative text-xl rounded-full p-3 hover:bg-light-gray"
@@ -34,7 +34,7 @@ function NavButton({ title, customFunc, icon, color, dotColor }) {
 }
 
 function Navbar() {
-  const [activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize] = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, handleClick, screenSize, setScreenSize } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -51,6 +51,7 @@ function Navbar() {
     }
   }, [screenSize]);
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
     <div className="
       flex justify-between p-2
@@ -59,7 +60,7 @@ function Navbar() {
     >
       <NavButton
         title="Menu"
-        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        customFunc={handleActiveMenu}
         color="blue"
         icon={<AiOutlineMenu />}
       />

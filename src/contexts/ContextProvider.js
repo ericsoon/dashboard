@@ -9,16 +9,16 @@ const initialState = {
   notification: false,
 };
 
-const handleClick = (clicked) => {
-  setIsClicked({ ...initialState, [clicked]: true });
-};
-
 export function ContextProvider({ children }) {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
+
+  const handleClick = (clicked) => setIsClicked({ ...initialState, [clicked]: true });
+
   return (
 
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StateContext.Provider value={{
       activeMenu,
       setActiveMenu,
@@ -26,6 +26,7 @@ export function ContextProvider({ children }) {
       setIsClicked,
       screenSize,
       setScreenSize,
+      handleClick,
     }}
     >
       {children}
