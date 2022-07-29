@@ -12,6 +12,7 @@ function SparkLine({ id, height, width, color, data, type, currentColor }) {
       valueType="Numeric"
       fill={color}
       border={{ color: currentColor, widht: 2 }}
+      markerSettings={{ visible: ['All'], size: 2.5, fill: currentColor }}
       dataSource={data}
       xName="x"
       yName="y"
@@ -25,7 +26,7 @@ function SparkLine({ id, height, width, color, data, type, currentColor }) {
         },
       }}
     >
-      <Inject services={{ SparklineTooltip }} />
+      <Inject services={[SparklineTooltip]} />
     </SparklineComponent>
   );
 }
