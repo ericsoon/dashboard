@@ -2,8 +2,10 @@ import React from 'react';
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Legend, Category, StackingColumnSeries, Tooltip } from '@syncfusion/ej2-react-charts';
 
 import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../data/dummy';
+// import { useStateContext } from '../../contexts/ContextProvider';
 
 function Stacked({ width, height }) {
+  // const { currentColor } = useStateContext();
   return (
     <ChartComponent
       id="charts"
@@ -14,6 +16,7 @@ function Stacked({ width, height }) {
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       legendSettings={{ background: 'white' }}
+      color="blue"
     >
       <Inject services={[Legend, Category, StackingColumnSeries, Tooltip]} />
       <SeriesCollectionDirective>
