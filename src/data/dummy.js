@@ -308,39 +308,51 @@ export const barCustomSeries = [
 ];
 export const colorMappingData = [
   [
-    { x: 'Jan', y: 6.96 },
-    { x: 'Feb', y: 8.9 },
-    { x: 'Mar', y: 12 },
-    { x: 'Apr', y: 17.5 },
-    { x: 'May', y: 22.1 },
-    { x: 'June', y: 25 },
-    { x: 'July', y: 29.4 },
-    { x: 'Aug', y: 29.6 },
-    { x: 'Sep', y: 25.8 },
-    { x: 'Oct', y: 21.1 },
-    { x: 'Nov', y: 15.5 },
-    { x: 'Dec', y: 9.9 },
+    { x: 'Jan', y: -14.5 },
+    { x: 'Feb', y: -9.3 },
+    { x: 'Mar', y: -3 },
+    { x: 'Apr', y: 5.6 },
+    { x: 'May', y: 15.2 },
+    { x: 'June', y: 21.2 },
+    { x: 'July', y: 26 },
+    { x: 'Aug', y: 30.9 },
+    { x: 'Sep', y: 22.4 },
+    { x: 'Oct', y: 13 },
+    { x: 'Nov', y: 6.3 },
+    { x: 'Dec', y: -5.5 },
   ],
+  ['#3399ff'],
+  ['#99ddff'],
   ['#FFFF99'],
   ['#FFA500'],
   ['#FF4040'],
 ];
 
 export const rangeColorMapping = [
+  { label: '-20°C to -11°C',
+    start: '-20',
+    end: '-11',
+    colors: colorMappingData[1] },
+
+  { label: '-10°C to 0°C',
+    start: '-10',
+    end: '0',
+    colors: colorMappingData[2] },
+
   { label: '1°C to 10°C',
     start: '1',
     end: '10',
-    colors: colorMappingData[1] },
+    colors: colorMappingData[3] },
 
   { label: '11°C to 20°C',
     start: '11',
     end: '20',
-    colors: colorMappingData[2] },
+    colors: colorMappingData[4] },
 
-  { label: '21°C to 30°C',
+  { label: '21°C to 32°C',
     start: '21',
-    end: '30',
-    colors: colorMappingData[3] },
+    end: '32',
+    colors: colorMappingData[5] },
 
 ];
 
