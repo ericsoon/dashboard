@@ -3,13 +3,16 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Tooltip, In
 
 import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
-import { Header } from '../../components';
+import { ChartsHeader } from '../../components';
 
 function Bar() {
   const { currentMode } = useStateContext();
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <Header category="Chart" title="Bar" />
+      <ChartsHeader
+        category="Bar"
+        title="Olympic Medal Counts - RIO"
+      />
       <div className="w-full">
         <ChartComponent
           title="Olympic Medal Counts- RIO"
