@@ -14,7 +14,7 @@ function Pyramid() {
         <AccumulationChartComponent
           id="pyramid-chart"
           background={currentMode === 'Dark' ? '#33373E' : '#FFF'}
-          legendSettings={{ mode: 'Range', background: 'white' }}
+          legendSettings={{ background: 'white' }}
         >
           <Inject services={[AccumulationLegend, PyramidSeries, AccumulationTooltip, AccumulationDataLabel]} />
           <AccumulationSeriesCollectionDirective>
@@ -32,7 +32,6 @@ function Pyramid() {
                 position: 'Inside',
                 font: {
                   fontWeight: '600',
-                  color: '#fff',
                 },
               }}
             />
